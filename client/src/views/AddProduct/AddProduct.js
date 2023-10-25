@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import './Form.css'
+import './AddProduct.css'
 import axios from 'axios'
+
 function Form() {
     const [name, setName] = useState('')
     const [discription, setDiscription] = useState('')
@@ -9,17 +10,31 @@ function Form() {
     const [productImage, setProductImage] = useState('')
 
     const submitData = async ()=>{
+        if(!name || !discription || !price || !highQuality || !productImage){
+            alert('please enter all fields')
+            return
+        }
   const dataproduct = {
-    name,
-    discription,
-    price,
-    highQuality,
-    productImage
+    name:name,
+        description:discription,
+        price:price,
+        productImage:productImage,
+        highQuality:highQuality,
+   
   }
-    await axios.post('/product',dataproduct)
+    const response = await axios.post('/product',dataproduct);
+
+  alert(response.data.message)
+
+  setName('')
+  setDiscription('')
+  setHighQuality('')
+  setPrice('')
+  setProductImage('')
+
     }
 
-    return (
+    return (<>
         <div className='form-container'>
             <form>
                 <h1 className='title'>Simple form</h1>
@@ -66,8 +81,14 @@ function Form() {
                 <button onClick={submitData}
                 >Submit</button>
             </form>
+
         </div>
+        <div>
+        <a href='/' className='link-Home'>Back To Home Page</a>
+        </div>
+        </>
     )
 }
 
 export default Form
+

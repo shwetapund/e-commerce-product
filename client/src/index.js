@@ -1,7 +1,8 @@
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import Home from './views/Home/Home';
-import Form from './views/Form/Form';
+import ProductDetail from './views/ProductDetail/ProductDetail';
+import AddProduct from './views/AddProduct/AddProduct';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
@@ -12,8 +13,12 @@ const router = createBrowserRouter([
         element: <Home/>
     },
     {
-        path:'/form',
-        element:<Form/>
+        path:'/add-product',
+        element:<AddProduct/>
+    },
+    {
+        path:'/product-detail/:_id',
+        element:<ProductDetail/>
     }
     
 ])

@@ -1,5 +1,5 @@
 .product-card{
-   box-shadow: 0px 0px 4px 1px lightgray;
+   box-shadow: 3px 2px 5px 1px lightgray;
     padding:10px 50px;
     background-color: lightcyan;
     margin: 20px;
@@ -15,4 +15,15 @@
 }
 .title{
     text-align: center;
+}
+.link-page{
+   text-decoration: none;
+    text-align: center;
+    color: aqua;
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.btn-delete-product{
+    margin-left: 250px;
 }

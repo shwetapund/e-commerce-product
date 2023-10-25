@@ -39,7 +39,7 @@ app.get('/products',async(req,res)=>{
 });
 
 app.post('/product',async (req,res)=>{
-    const {name, description, price, productImage, highQuality} = req.body;
+    const {name, description, price, productImage,highQuality} = req.body;
 
     const newProduct = new Product({
         name:name,
@@ -57,12 +57,10 @@ app.post('/product',async (req,res)=>{
     })
 })
 
-app.get('/product',async (req,res)=>{
-    const {name} = req.query;
+app.get('/product/:_id',async (req,res)=>{
+    const { _id } = req.params;
 
-    const product = await Product.findOne({
-        name:name
-    })
+    const product = await Product.findById(_id);
     res.json({
         success:true,
         data:product,
