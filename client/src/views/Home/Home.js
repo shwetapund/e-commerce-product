@@ -54,7 +54,7 @@ function Home() {
 
                 <div>
                   <h3>Name: {name}</h3>
-                  <p>description: {description}</p>
+                  <p><b>discription: </b> {description}</p>
                   <p><b>highQuality:</b>{highQuality}</p>
                   <p><b>price:</b> {price}</p>
                   <a href={`/product-detail/${_id}`} target='_blank'>Learn more</a>
@@ -62,6 +62,10 @@ function Home() {
                   <button className='btn-delete-product'
                     onClick={()=>{deletePro(_id)}}
                   >delete</button>
+
+                  <a href={`/update-product/${_id}`} 
+                  target='_blank'
+                  className='btn-edit-product'>Edit</a>
                 </div>
 
               </div>
