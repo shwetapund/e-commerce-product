@@ -1,32 +1,82 @@
 .product-card{
-   box-shadow: 3px 2px 5px 1px lightgray;
-    padding:10px 50px;
-    background-color: lightcyan;
+   box-shadow: 0px 0px 5px 1px lightgray;
+    padding:10px 5px;
+    /* background-color: lightcyan; */
     margin: 20px;
+    width: 300px;
+
 }
 .img-product{
-    height: 200px;
-    width: 250px;
+    height: 230px;
+    width: 200px;
     margin-right:10px;
+    display: block;
+    margin: 0 auto;
 }
 .container-product{
     display: flex;
-    
+    justify-content:space-evenly;
+    flex-wrap: wrap;
 }
 .title{
     text-align: center;
 }
 .link-page{
    text-decoration: none;
-    text-align: center;
-    color: aqua;
+   margin-left: 1300px;
+    color: rgb(0, 17, 255);
     font-size: 25px;
     font-weight: bold;
-    margin-left: 10px;
+    margin-top: 100px;
 }
 .btn-delete-product{
-    margin-left: 250px;
+    padding: 2px 10px ;
+    border-radius: 10px;
+    font-size: 18px;
+    border: none;
+    background-color:rgb(251, 44, 44);
+    color: white;
 }
 .btn-edit-product{
-    margin-left: 250px;
+    text-decoration: none;
+    color: white;
+}
+.button-edit{
+    padding: 0px 15px ;
+    border-radius: 10px;
+    font-size: 18px;
+    border: none;
+    background-color:gray;
+    color: white;
+}
+.text{
+    margin-left: 10px;
+}
+.button-container{
+    display: flex;
+    justify-content: space-around;
+
+}
+.height{
+    height: 20px;
+}
+.btn-view-More{
+    text-decoration: none;
+    color: white;
+    
+}
+.button{
+    padding: 10px 15px ;
+    font-size: 18px;
+    border: none;
+    background-color: black;
+    color: white;
+}
+.button-view-more{
+    padding: 8px 10px ;
+    font-size: 18px;
+    border: none;
+    background-color: rgb(42, 42, 42);
+    color: white;
+    border-radius: 10px;
 }

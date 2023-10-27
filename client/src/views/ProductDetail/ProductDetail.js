@@ -23,7 +23,7 @@ const loadProduct = async ()=>{
       <div className='product-detail'>
         <p>Name: {product?.name}</p>
         <p>description: {product?.description}</p>
-        <p>highQuality: {product?.highQuality}</p>
+        <p>Quality: {product?.Quality}</p>
         <p>price: {product?.price}</p>
         <img src={product?.productImage} className='img-product' />
       </div>

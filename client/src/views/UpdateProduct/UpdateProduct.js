@@ -7,7 +7,7 @@ function UpdateProduct() {
     const [name, setName] = useState('')
     const [description, setDescription] = useState('')
     const [price, setPrice] = useState('')
-    const [highQuality, setHighQuality] = useState('')
+    const [Quality, setQuality] = useState('')
     const [productImage, setProductImage] = useState('')
 
     const {id} = useParams();
@@ -15,10 +15,10 @@ function UpdateProduct() {
     const loadProduct = async () =>{
         const response = await axios.get(`/product/${id}`)
 
-        const {name, description, highQuality, price, productImage } = response?.data?.data
+        const {name, description, Quality, price, productImage } = response?.data?.data
         setName(name)
         setDescription(description)
-        setHighQuality(highQuality)
+        setQuality(Quality)
         setPrice(price)
         setProductImage(productImage)
     }
@@ -27,7 +27,7 @@ function UpdateProduct() {
    },[])
 
     const UpdateProduct = async ()=>{
-        const updateDetails =  {name ,description, highQuality, price, productImage }
+        const updateDetails =  {name ,description, Quality, price, productImage }
 
         const response = await axios.put(`/product/${id}`,updateDetails);
         alert(response?.data?.message)
@@ -57,9 +57,9 @@ function UpdateProduct() {
                 <input type='text'
                     className='input-box'
                     placeholder='enter highQuality'
-                    value={highQuality}
+                    value={Quality}
                     onChange={(e) => {
-                        setHighQuality(e.target.value)
+                        setQuality(e.target.value)
                     }} />
                 <br />
                 <input type='text'

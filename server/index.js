@@ -21,7 +21,7 @@ const productSchema = new Schema ({
     description:String,
     productImage:String,
     price:String,
-    highQuality:String,
+    Quality:String,
 });
 
 
@@ -39,14 +39,14 @@ app.get('/products',async(req,res)=>{
 });
 
 app.post('/product',async (req,res)=>{
-    const {name, description, price, productImage,highQuality} = req.body;
+    const {name, description, price, productImage,Quality} = req.body;
 
     const newProduct = new Product({
         name:name,
         description:description,
         price:price,
         productImage:productImage,
-        highQuality:highQuality,
+        Quality:Quality,
     })
     const savedProduct = await newProduct.save();
 
@@ -67,7 +67,7 @@ app.get('/product/:_id',async (req,res)=>{
         message:"successfully fetch products",
     })
 })
-
+//delete operation
 app.delete('/product/:id',async(req,res)=>{
     const {id} = req.params;
 
@@ -84,7 +84,7 @@ app.delete('/product/:id',async(req,res)=>{
 app.put('/product/:_id', async(req,res)=>{
     const {_id} = req.params;
 
-    const {name, description, price, productImage, highQuality} = req.body;
+    const {name, description, price, productImage, Quality} = req.body;
 
     if(!name){
         res.json({
@@ -110,17 +110,17 @@ app.put('/product/:_id', async(req,res)=>{
             message:"productImage is required"
         })
     }
-    if(!highQuality){
+    if(!Quality){
         res.json({
             success:false,
-            message:"highQuality is required"
+            message:"Quality is required"
         })
     }
 
     await Product.updateOne({_id:_id},{$set: {
         name:name,
         description:description,
-        highQuality:highQuality,
+        Quality:Quality,
         productImage:productImage,
         price:price
     } })
@@ -134,11 +134,11 @@ app.put('/product/:_id', async(req,res)=>{
     })
 
 })
-
+//patch
 app.patch('/product/:_id',async(req,res)=>{
     const {_id} = req.params;
 
-    const {name,description,price,productImage,highQuality} = req.body;
+    const {name,description,price,productImage,Quality} = req.body;
 
     const findPrduct = await Product.findById(_id)
 
@@ -154,9 +154,9 @@ app.patch('/product/:_id',async(req,res)=>{
     {
         findPrduct.price = price;
     }
-    if(highQuality)
+    if(Quality)
     {
-        findPrduct.highQuality = highQuality;
+        findPrduct.Quality = Quality;
     } 
     if(productImage)
     {

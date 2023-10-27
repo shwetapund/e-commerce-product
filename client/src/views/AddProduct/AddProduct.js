@@ -6,20 +6,20 @@ function Form() {
     const [name, setName] = useState('')
     const [discription, setDiscription] = useState('')
     const [price, setPrice] = useState('')
-    const [highQuality, setHighQuality] = useState('')
+    const [Quality, setQuality] = useState('')
     const [productImage, setProductImage] = useState('')
 
     const submitData = async ()=>{
-        if(!name || !discription || !price || !highQuality || !productImage){
+        if(!name || !discription || !price || !Quality || !productImage){
             alert('please enter all fields')
             return
         }
   const dataproduct = {
-    name:name,
+        name:name,
         description:discription,
         price:price,
         productImage:productImage,
-        highQuality:highQuality,
+        Quality:Quality,
    
   }
     const response = await axios.post('/product',dataproduct);
@@ -28,7 +28,7 @@ function Form() {
 
   setName('')
   setDiscription('')
-  setHighQuality('')
+  setQuality('')
   setPrice('')
   setProductImage('')
 
@@ -57,9 +57,9 @@ function Form() {
                 <input type='text'
                     className='input-box'
                     placeholder='enter highQuality'
-                    value={highQuality}
+                    value={Quality}
                     onChange={(e) => {
-                        setHighQuality(e.target.value)
+                        setQuality(e.target.value)
                     }} />
                 <br />
                 <input type='text'
