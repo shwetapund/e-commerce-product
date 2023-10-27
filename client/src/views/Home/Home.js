@@ -29,9 +29,9 @@ function Home() {
     <>
       <div className='title'>
         <h1>Patanjali Product</h1>
-       
-      </div>
 
+      </div>
+      <a href='/add-product' className='link-page '>Add Product ✍</a>
       <div className='container-product'>
         {
           product.map((productInfo, index) => {
@@ -51,31 +51,36 @@ function Home() {
                 <p className='height'><b>Quality:</b>{Quality}</p>
                 <p className='height'><b>price:</b> {price}</p>
 
-                <div className='button-container'>
-                  
-                 <button className='button-view-more'>
-                 <a href={`/product-detail/${_id}`} target='_blank' className='btn-view-More'>Learn more</a>
-                 </button>
-                  <button className='btn-delete-product'
+                <div className='edit-delete-container'>
+                  <span className='btn-delete-product'
                     onClick={() => { deletePro(_id) }}
-                  >delete</button>
+                  >❌</span>
 
-                  <button className='button-edit'>
                   <a href={`/update-product/${_id}`}
                     target='_blank'
-                    className='btn-edit-product'>Edit</a>
-                  </button>
-           
+                    className='btn-edit-product'>✍</a>
                 </div>
+
+                <div className='container-product'>
+                  <button className='button-view-more'>
+                    <a href={`/product-detail/${_id}`} target='_blank' className='btn-view-More'>View more</a>
+                  </button>
+                  <button className='button-Buy-now'>
+                    Buy Now
+                  </button>
+
+                </div>
+
               </div>
-              
             </div>
+
+
 
           })
 
         }
       </div>
-      <a href='/add-product' className='link-page '>Add Product</a>
+
     </>
   )
 }

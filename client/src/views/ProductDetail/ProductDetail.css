@@ -8,4 +8,6 @@
     border-radius: 5px;
     background-color: #fff;
     box-shadow: 0 0 5px#ccc;
+    box-shadow: 0 0 3px 1px lightgray;
+    background-color: rgb(255, 232, 232);
 }

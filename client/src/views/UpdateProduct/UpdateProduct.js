@@ -10,10 +10,10 @@ function UpdateProduct() {
     const [Quality, setQuality] = useState('')
     const [productImage, setProductImage] = useState('')
 
-    const {id} = useParams();
+    const {_id} = useParams();
 
     const loadProduct = async () =>{
-        const response = await axios.get(`/product/${id}`)
+        const response = await axios.get(`/product/${_id}`)
 
         const {name, description, Quality, price, productImage } = response?.data?.data
         setName(name)
@@ -29,17 +29,17 @@ function UpdateProduct() {
     const UpdateProduct = async ()=>{
         const updateDetails =  {name ,description, Quality, price, productImage }
 
-        const response = await axios.put(`/product/${id}`,updateDetails);
+        const response = await axios.put(`/product/${_id}`,updateDetails);
         alert(response?.data?.message)
 
     }
 
     return (<>
         <div className='form-container'>
-            <form>
+            <form >
                 <h1 className='title'>Update Product</h1>
                 <input type='text'
-                    className='input-box'
+                    className='input-box-update'
                     placeholder='enter name'
                     value={name}
                     onChange={(e) => {
@@ -47,7 +47,7 @@ function UpdateProduct() {
                     }} />
                 <br />
                 <input type='text'
-                    className='input-box'
+                    className='input-box-update'
                     placeholder='enter discription'
                     value={description}
                     onChange={(e) => {
@@ -55,7 +55,7 @@ function UpdateProduct() {
                     }} />
                 <br />
                 <input type='text'
-                    className='input-box'
+                    className='input-box-update'
                     placeholder='enter highQuality'
                     value={Quality}
                     onChange={(e) => {
@@ -63,7 +63,7 @@ function UpdateProduct() {
                     }} />
                 <br />
                 <input type='text'
-                    className='input-box'
+                    className='input-box-update'
                     placeholder='enter price'
                     value={price}
                     onChange={(e) => {
@@ -71,7 +71,7 @@ function UpdateProduct() {
                     }} />
                     <br/>
                 <input type='text'
-                    className='input-box'
+                    className='input-box-update'
                     placeholder='enter productImage'
                     value={productImage}
                     onChange={(e) => {
@@ -79,12 +79,13 @@ function UpdateProduct() {
                     }} />
 
                 <button onClick={ UpdateProduct }
+                className='button-update'
                     >Update Product</button>
             </form>
 
         </div>
-        <div>
-        <a href='/' className='link-Home'>Back To Home Page</a>
+        <div className='home-link'>
+        <a href='/' className='link-Home'>Back To Home Page <span className='arrow'>➡</span></a>
         </div>
         </>
     )

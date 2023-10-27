@@ -35,7 +35,7 @@ function Form() {
     }
 
     return (<>
-        <div className='form-container'>
+        <div className='form-container-addproduct'>
             <form>
                 <h1 className='title'>Simple form</h1>
                 <input type='text'
@@ -79,12 +79,13 @@ function Form() {
                     }} />
 
                 <button onClick={submitData}
+                className='button-add'
                 >Submit</button>
             </form>
 
         </div>
-        <div>
-        <a href='/' className='link-Home'>Back To Home Page</a>
+        <div className='link-Home'>
+        <a href='/' >Back To Home Page ➡</a>
         </div>
         </>
     )

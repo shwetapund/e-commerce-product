@@ -1,11 +1,14 @@
-.form-container{
-    border: 1px solid black;
+.form-container-addproduct{
+  
     border-radius: 10px;
-    height: 400px;
+    height: 500px;
     width: 400px;
     display: block;
     margin:  0 auto;
-
+    margin-top: 50px;
+    padding: 10px;
+    border: none;
+    box-shadow: 0px 0px 5px 1px lightcoral;
 }
 .title{
     text-align: center;
@@ -14,11 +17,28 @@
     display: block;
     margin: 0 auto;
     padding: 10px;
-    border-radius: 20px;
-    border: 1px solid black
-    
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 20px;
+    width: 300px;
 }
 .link-Home{
-    color: black;
+
     text-decoration: none;
+    margin-top: 50px;
+    text-align: end;
+   
+}
+.button-add{
+    margin-top: 30px;
+    padding: 13px 80px;
+    background-color: orange;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    display: block;
+    margin: 30px auto;
+    font-size: 28px;
+    font-weight: bold;
+   
 }
